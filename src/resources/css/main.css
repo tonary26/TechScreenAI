@@ -1,0 +1,101 @@
+:root {
+    --bg-main: #050505;
+    --bg-card: #0b0b0b;
+    --text-main: #ffffff;
+    --text-muted: #555555;
+    --border: #1a1a1a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    min-height: 100vh;
+    letter-spacing: -0.02em;
+}
+
+aside {
+    width: 240px;
+    background-color: var(--bg-main);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem 2rem;
+}
+
+.logo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.logo span {
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.nav-links {
+    list-style: none;
+    margin-top: 3rem;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin-bottom: 0.75rem;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.25rem 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
+}
+
+.user-profile {
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    color: var(--text-muted);
+}
+
+.user-profile strong {
+    color: var(--text-main);
+    display: block;
+}
+
+main {
+    flex-grow: 1;
+    padding: 3rem 4rem;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    body { flex-direction: column; }
+    aside {
+        width: 100%;
+        padding: 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+    .nav-links { display: flex; margin-top: 1rem; gap: 1rem; }
+    .nav-links li { margin-bottom: 0; }
+    .user-profile { display: none; }
+    main { padding: 2rem; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .main-controls { grid-column: span 1; }
+}
