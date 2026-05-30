@@ -14,7 +14,8 @@
         <h2>Авторизация</h2>
         <p class="subtitle">Начните тренировать технические навыки с ИИ</p>
 
-        <form action="#" method="POST">
+        <form action="{{ route('auth.login') }}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="email">Электронная почта</label>
                 <input type="email" id="email" name="email" placeholder="name@domain.com" required autocomplete="email">

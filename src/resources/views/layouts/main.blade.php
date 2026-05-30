@@ -14,7 +14,16 @@
         <ul class="nav-links">
             <li><a href="#" class="active">Главная</a></li>
             <li><a href="#">История</a></li>
-            <li><a href="{{ route('auth.login.show') }}">Авторизация</a></li>
+            @guest()
+                <li><a href="{{ route('auth.login.show') }}">Авторизация</a></li>
+            @endguest
+
+            @auth
+                <form action="{{ route('auth.logout') }}" method="POST">
+                    @csrf
+                    <li><button class="active-btn" type="submit">Выйти</button></li>
+                </form>
+            @endauth
         </ul>
     </div>
 

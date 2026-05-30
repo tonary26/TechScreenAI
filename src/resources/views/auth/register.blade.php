@@ -14,7 +14,8 @@
         <h2>Создать аккаунт</h2>
         <p class="subtitle">Начните тренировать технические навыки с ИИ</p>
 
-        <form action="#" method="POST">
+        <form action="{{ route('auth.register') }}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="name">Имя</label>
                 <input type="text" id="name" name="name" placeholder="Алексей" required autocomplete="name">
